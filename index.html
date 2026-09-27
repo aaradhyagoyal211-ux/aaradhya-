@@ -4,686 +4,893 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Favourite Chhora ♡</title>
+<title>To My Everything 🌎</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================================
+   BASIC
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: #f4f0ea;
-    color: #24211f;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+body{
+    background:#f7f6f2;
+    color:#111;
+    font-family:'Montserrat', sans-serif;
+    overflow-x:hidden;
 }
 
-/* ---------------- NAVBAR ---------------- */
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
 
-nav {
-    position: fixed;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-
-    width: min(92%, 850px);
-    padding: 13px 22px;
-
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255,255,255,0.8);
-    border-radius: 50px;
-
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+.page{
+    display:none;
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
 }
 
-nav a {
-    text-decoration: none;
-    color: #403a36;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: 0.3s;
+.page.active{
+    display:flex;
+    animation:pageIn .8s ease;
 }
 
-nav a:hover {
-    color: #9b5d61;
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-/* ---------------- SECTIONS ---------------- */
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
 
-section {
-    min-height: 100vh;
-    padding: 120px 8% 80px;
-    position: relative;
+.heart{
+    position:fixed;
+    bottom:-40px;
+    font-size:20px;
+    pointer-events:none;
+    z-index:20;
+    animation:floatHeart linear infinite;
 }
 
-/* ---------------- HOME ---------------- */
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
 
-.home {
-    min-height: 100vh;
+    15%{
+        opacity:1;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    100%{
+        transform:translateY(-110vh) rotate(25deg);
+        opacity:0;
+    }
+}
 
-    text-align: center;
+/* =========================================================
+   MOVING CATS
+========================================================= */
 
+.cat{
+    position:absolute;
+    font-size:38px;
+    z-index:5;
+    animation:catWalk 14s linear infinite;
+}
+
+.cat.one{
+    bottom:22px;
+    left:-60px;
+}
+
+.cat.two{
+    top:18%;
+    right:-70px;
+    animation-delay:4s;
+    animation-direction:reverse;
+}
+
+@keyframes catWalk{
+    0%{
+        transform:translateX(0) scaleX(1);
+    }
+
+    50%{
+        transform:translateX(55vw) scaleX(1);
+    }
+
+    100%{
+        transform:translateX(110vw) scaleX(1);
+    }
+}
+
+/* =========================================================
+   PAGE 1
+========================================================= */
+
+.home{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
     background:
-        radial-gradient(circle at 15% 20%, #e7d6ca 0%, transparent 25%),
-        radial-gradient(circle at 85% 75%, #d9d7ce 0%, transparent 30%),
-        #f4f0ea;
+        radial-gradient(circle at 20% 20%, #ffffff 0 4%, transparent 5%),
+        radial-gradient(circle at 80% 70%, #ffffff 0 3%, transparent 4%),
+        #f5f4ef;
 }
 
-.home-content {
-    max-width: 850px;
+.home::before{
+    content:"";
+    position:absolute;
+    inset:22px;
+    border:2px solid #111;
+    pointer-events:none;
 }
 
-.small-title {
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 11px;
-    color: #8d7772;
-    margin-bottom: 20px;
+.home-content{
+    max-width:850px;
+    padding:40px 25px;
+    z-index:10;
 }
 
-.home h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(55px, 10vw, 120px);
-    font-weight: 400;
-    line-height: 0.9;
+.small-top{
+    font-size:12px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:20px;
 }
 
-.home h1 span {
-    font-style: italic;
-    color: #8d5b60;
+.home h1{
+    font-family:'DM Serif Display', serif;
+    font-size:clamp(55px,10vw,120px);
+    line-height:.95;
+    font-weight:400;
 }
 
-.home-sub {
-    margin: 30px auto;
-    max-width: 480px;
-    font-size: 14px;
-    line-height: 1.9;
-    color: #6e6661;
+.home-script{
+    font-family:'Great Vibes', cursive;
+    font-size:clamp(40px,6vw,75px);
+    margin-top:25px;
 }
 
-.start-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 14px 28px;
-
-    border-radius: 50px;
-
-    background: #292522;
-    color: white;
-
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 1px;
-
-    transition: 0.3s;
+.home-sub{
+    margin:25px auto;
+    max-width:550px;
+    font-size:13px;
+    line-height:2;
+    letter-spacing:1px;
 }
 
-.start-btn:hover {
-    transform: translateY(-4px);
-    background: #8d5b60;
+.start-btn{
+    margin-top:20px;
+    padding:15px 30px;
+    border:1px solid #111;
+    background:#111;
+    color:white;
+    border-radius:50px;
+    font-family:'Montserrat',sans-serif;
+    cursor:pointer;
+    transition:.3s;
 }
 
-/* floating hearts */
-
-.float {
-    position: absolute;
-    font-size: 25px;
-    opacity: 0.5;
-    animation: float 5s ease-in-out infinite;
+.start-btn:hover{
+    background:white;
+    color:#111;
+    transform:translateY(-4px);
 }
 
-.f1 { top: 25%; left: 10%; }
-.f2 { top: 35%; right: 10%; animation-delay: 1s; }
-.f3 { bottom: 20%; left: 20%; animation-delay: 2s; }
-.f4 { bottom: 25%; right: 20%; animation-delay: 3s; }
+/* =========================================================
+   ROAD
+========================================================= */
 
-@keyframes float {
-    0%,100% { transform: translateY(0) rotate(0); }
-    50% { transform: translateY(-18px) rotate(8deg); }
+.road{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:75px;
+    background:#111;
+    overflow:hidden;
 }
 
-/* ---------------- ABOUT HIM ---------------- */
-
-.about {
-    background: #e7ded6;
+.road-line{
+    position:absolute;
+    top:34px;
+    left:0;
+    width:200%;
+    height:5px;
+    background:repeating-linear-gradient(
+        90deg,
+        white 0 80px,
+        transparent 80px 150px
+    );
+    animation:roadMove 1.5s linear infinite;
 }
 
-.section-heading {
-    text-align: center;
-    margin-bottom: 55px;
+@keyframes roadMove{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-150px);
+    }
 }
 
-.section-heading p {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #8d7772;
-    margin-bottom: 10px;
+.mini-car{
+    position:absolute;
+    bottom:55px;
+    left:15%;
+    font-size:48px;
+    animation:drive 7s linear infinite;
 }
 
-.section-heading h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(45px, 7vw, 80px);
-    font-weight: 400;
+@keyframes drive{
+    0%{left:-10%;}
+    100%{left:110%;}
 }
 
-.about-grid {
-    max-width: 1050px;
-    margin: auto;
+/* =========================================================
+   PAGE 2 - CAR SELECT
+========================================================= */
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 45px;
-    align-items: center;
+.cars-page{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    padding:60px 25px 100px;
+    background:#eeeeeb;
 }
 
-.photo-card {
-    background: #f8f4ee;
-    padding: 15px 15px 35px;
-    transform: rotate(-2deg);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+.cars-page.active{
+    display:flex;
 }
 
-.photo-card img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-    display: block;
+.section-label{
+    font-size:11px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:15px;
 }
 
-.photo-caption {
-    text-align: center;
-    margin-top: 16px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+.cars-page h2{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(40px,6vw,75px);
+    text-align:center;
+    font-weight:400;
 }
 
-.about-text {
-    padding: 20px;
+.instruction{
+    font-family:'Great Vibes',cursive;
+    font-size:38px;
+    margin:10px 0 45px;
 }
 
-.about-text h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 38px;
-    margin-bottom: 20px;
+.car-grid{
+    width:min(1100px,100%);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.about-text p {
-    line-height: 1.9;
-    color: #665f5a;
-    font-size: 14px;
+.car-card{
+    position:relative;
+    min-height:430px;
+    border:2px solid #111;
+    background:#fff;
+    cursor:pointer;
+    overflow:hidden;
+    transition:.45s;
 }
 
-/* ---------------- DESI CHHORA ---------------- */
-
-.desi {
-    background: #272421;
-    color: #f5eee6;
+.car-card:hover{
+    transform:translateY(-12px) rotate(-1deg);
+    box-shadow:12px 12px 0 #111;
 }
 
-.desi .section-heading p {
-    color: #c5a7a0;
+.car-photo{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    filter:grayscale(10%);
+    transition:.5s;
 }
 
-.desi .section-heading h2 {
-    color: #f5eee6;
+.car-card:hover .car-photo{
+    transform:scale(1.07);
 }
 
-.desi-box {
-    max-width: 850px;
-    margin: auto;
+.car-info{
+    padding:20px;
+}
 
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 45px;
+.car-number{
+    font-size:10px;
+    letter-spacing:4px;
+}
 
-    text-align: center;
+.car-name{
+    font-family:'DM Serif Display',serif;
+    font-size:35px;
+    margin-top:7px;
+}
 
+.select-text{
+    margin-top:10px;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.car-decoration{
+    position:absolute;
+    right:15px;
+    bottom:15px;
+    font-size:25px;
+}
+
+/* =========================================================
+   INNER MESSAGE PAGES
+========================================================= */
+
+.message-page{
+    align-items:center;
+    justify-content:center;
+    background:#f6f5f0;
+    padding:70px 25px 130px;
+}
+
+.message-wrapper{
+    width:min(850px,100%);
+    position:relative;
+    background:#fff;
+    border:2px solid #111;
+    padding:55px 55px 70px;
+    box-shadow:15px 15px 0 #111;
+}
+
+.message-wrapper::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid #ccc;
+    pointer-events:none;
+}
+
+.message-label{
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.message-title{
+    font-family:'DM Serif Display',serif;
+    font-size:55px;
+    font-weight:400;
+    margin-bottom:30px;
+}
+
+.message-text{
+    font-family:'Playfair Display',serif;
+    font-size:18px;
+    line-height:2;
+    color:#292929;
+}
+
+.message-text strong{
+    font-weight:500;
+}
+
+.signature{
+    font-family:'Great Vibes',cursive;
+    font-size:45px;
+    margin-top:35px;
+}
+
+/* =========================================================
+   NAVIGATION ARROW
+========================================================= */
+
+.next-arrow{
+    position:absolute;
+    bottom:30px;
+    right:35px;
+    border:2px solid #111;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    cursor:pointer;
+    font-size:22px;
+    transition:.3s;
+    z-index:30;
+}
+
+.next-arrow:hover{
+    background:#111;
+    color:white;
+    transform:translateX(7px);
+}
+
+.back-arrow{
+    position:absolute;
+    bottom:30px;
+    left:35px;
+    border:2px solid #111;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    cursor:pointer;
+    font-size:22px;
+    transition:.3s;
+    z-index:30;
+}
+
+.back-arrow:hover{
+    background:#111;
+    color:white;
+    transform:translateX(-7px);
+}
+
+/* =========================================================
+   PAGE 4 - THAR
+========================================================= */
+
+.thar-page{
+    background:#dedbd4;
+}
+
+.thar-box{
+    background:#111;
+    color:#f8f6ef;
+    box-shadow:15px 15px 0 #777;
+}
+
+.thar-box::before{
+    border-color:#555;
+}
+
+.thar-box .message-text{
+    color:#f3f1e9;
+}
+
+.thar-title{
+    font-family:'Great Vibes',cursive;
+    font-size:75px;
+}
+
+.polaroid{
+    width:190px;
+    background:white;
+    padding:10px 10px 25px;
+    transform:rotate(-4deg);
+    margin:0 auto 35px;
+    color:#111;
+}
+
+.polaroid img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+}
+
+.polaroid p{
+    text-align:center;
+    font-family:'Great Vibes',cursive;
+    font-size:25px;
+    margin-top:8px;
+}
+
+/* =========================================================
+   PAGE 5 - VOICE NOTE
+========================================================= */
+
+.voice-page{
     background:
-        linear-gradient(
-            rgba(255,255,255,0.03),
-            rgba(255,255,255,0.03)
-        );
+        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+        url('scorpio.jpg') center/cover;
+    color:white;
 }
 
-.desi-big {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(35px, 6vw, 65px);
-    font-style: italic;
-    margin-bottom: 30px;
+.voice-box{
+    width:min(700px,90%);
+    text-align:center;
+    padding:60px 30px;
+    border:1px solid rgba(255,255,255,.6);
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,.45);
 }
 
-.traits {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15px;
+.voice-box h2{
+    font-family:'DM Serif Display',serif;
+    font-size:65px;
+    font-weight:400;
 }
 
-.trait {
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 22px;
-    font-size: 13px;
+.voice-sub{
+    font-family:'Great Vibes',cursive;
+    font-size:38px;
+    margin:10px 0 35px;
 }
 
-.trait span {
-    display: block;
-    color: #cda9a0;
-    margin-top: 7px;
+.voice-icon{
+    font-size:60px;
+    margin-bottom:25px;
 }
 
-/* ---------------- CARS ---------------- */
-
-.cars {
-    background: #d8ddd9;
+audio{
+    width:min(500px,100%);
 }
 
-.car-grid {
-    max-width: 1050px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 22px;
+.voice-note-text{
+    margin-top:25px;
+    font-size:12px;
+    letter-spacing:2px;
 }
 
-.car-card {
-    background: #f5f4ef;
-    padding: 14px;
+/* =========================================================
+   PAGE 6 - THANK YOU
+========================================================= */
 
-    transition: 0.4s;
+.thank-page{
+    align-items:center;
+    justify-content:center;
+    background:#111;
+    color:#f7f4eb;
+    padding:60px 25px;
 }
 
-.car-card:hover {
-    transform: translateY(-10px) rotate(-1deg);
+.thank-wrapper{
+    width:min(900px,100%);
+    text-align:center;
 }
 
-.car-card img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
+.thank-title{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(70px,13vw,150px);
+    font-weight:400;
+    letter-spacing:-3px;
 }
 
-.car-info {
-    padding: 18px 8px;
+.thank-line{
+    width:100px;
+    height:1px;
+    background:#fff;
+    margin:25px auto 40px;
 }
 
-.car-info h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
+.thank-text{
+    font-family:'Playfair Display',serif;
+    font-size:18px;
+    line-height:2.1;
+    max-width:800px;
+    margin:auto;
+    color:#e7e3d9;
 }
 
-.car-info p {
-    font-size: 11px;
-    color: #77716c;
-    margin-top: 6px;
+.final-sign{
+    margin-top:45px;
+    text-align:right;
+    font-family:'Great Vibes',cursive;
+    font-size:34px;
 }
 
-/* ---------------- LITTLE THINGS ---------------- */
-
-.little {
-    background: #f4e8e4;
+.final-heart{
+    font-size:55px;
+    margin-top:25px;
+    animation:pulse 1.7s infinite;
 }
 
-.notes {
-    max-width: 850px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 25px;
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.18);
+    }
 }
 
-.note {
-    background: #fffaf7;
-    padding: 35px;
+/* =========================================================
+   SPARKLES
+========================================================= */
 
-    min-height: 170px;
-
-    display: flex;
-    align-items: center;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    line-height: 1.5;
-
-    transition: 0.3s;
+.sparkle{
+    position:absolute;
+    font-size:18px;
+    animation:twinkle 2s ease-in-out infinite;
 }
 
-.note:hover {
-    transform: rotate(1deg) scale(1.02);
+@keyframes twinkle{
+    0%,100%{
+        opacity:.3;
+        transform:scale(.8);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.2);
+    }
 }
 
-.note:nth-child(even) {
-    transform: rotate(1deg);
-}
+/* =========================================================
+   MOBILE
+========================================================= */
 
-.note:nth-child(even):hover {
-    transform: rotate(0) scale(1.02);
-}
+@media(max-width:750px){
 
-/* ---------------- LETTER ---------------- */
-
-.letter {
-    background: #eee9df;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.letter-box {
-    max-width: 750px;
-
-    background: #fffdf8;
-
-    padding: 60px 55px;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-
-    text-align: center;
-}
-
-.letter-box .tiny {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 10px;
-    color: #9a7770;
-}
-
-.letter-box h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 55px;
-    font-weight: 400;
-    margin: 20px 0 30px;
-}
-
-.letter-box p {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    line-height: 2;
-    color: #5d5752;
-}
-
-.signature {
-    margin-top: 30px;
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-size: 25px;
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer {
-    background: #272421;
-    color: #eee4da;
-    padding: 35px;
-    text-align: center;
-}
-
-footer p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 15px;
-}
-
-/* ---------------- MOBILE ---------------- */
-
-@media(max-width: 700px) {
-
-    nav {
-        gap: 10px;
-        padding: 12px;
+    .home::before{
+        inset:12px;
     }
 
-    nav a {
-        font-size: 8px;
+    .car-grid{
+        grid-template-columns:1fr;
+        width:min(450px,100%);
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
+    .car-card{
+        min-height:390px;
     }
 
-    .photo-card img {
-        height: 400px;
+    .car-photo{
+        height:240px;
     }
 
-    .traits {
-        grid-template-columns: 1fr;
+    .message-wrapper{
+        padding:40px 25px 75px;
+        box-shadow:9px 9px 0 #111;
     }
 
-    .car-grid {
-        grid-template-columns: 1fr;
+    .message-title{
+        font-size:43px;
     }
 
-    .notes {
-        grid-template-columns: 1fr;
+    .message-text{
+        font-size:16px;
+        line-height:1.9;
     }
 
-    .letter-box {
-        padding: 40px 25px;
+    .thar-title{
+        font-size:60px;
     }
 
-    .letter-box h2 {
-        font-size: 42px;
+    .voice-box h2{
+        font-size:50px;
     }
+
+    .voice-sub{
+        font-size:30px;
+    }
+
+    .next-arrow{
+        right:20px;
+        bottom:18px;
+    }
+
+    .back-arrow{
+        left:20px;
+        bottom:18px;
+    }
+
+}
+
+/* =========================================================
+   EXTRA LITTLE DETAILS
+========================================================= */
+
+.doodle{
+    position:absolute;
+    font-family:'Great Vibes',cursive;
+    font-size:35px;
+    opacity:.5;
+}
+
+.doodle.a{
+    top:12%;
+    left:8%;
+    transform:rotate(-10deg);
+}
+
+.doodle.b{
+    bottom:15%;
+    right:8%;
+    transform:rotate(8deg);
 }
 
 </style>
 </head>
 
-
 <body>
 
-<!-- NAVIGATION -->
 
-<nav>
-    <a href="#home">home</a>
-    <a href="#him">him</a>
-    <a href="#desi">chhora</a>
-    <a href="#cars">cars</a>
-    <a href="#little">little things</a>
-    <a href="#letter">♡</a>
-</nav>
+<!-- ======================================================
+     PAGE 1
+====================================================== -->
 
+<section class="page active home" id="page1">
 
-<!-- HOME -->
+    <div class="cat one">🐈‍⬛</div>
+    <div class="cat two">🐈</div>
 
-<section class="home" id="home">
+    <div class="sparkle" style="top:15%;left:20%;">✦</div>
+    <div class="sparkle" style="top:30%;right:15%;animation-delay:.5s;">✧</div>
+    <div class="sparkle" style="bottom:25%;left:12%;animation-delay:1s;">✦</div>
 
-    <div class="float f1">♡</div>
-    <div class="float f2">✦</div>
-    <div class="float f3">♡</div>
-    <div class="float f4">✧</div>
+    <div class="doodle a">for you ♡</div>
+    <div class="doodle b">only you</div>
 
     <div class="home-content">
 
-        <div class="small-title">
-            chapter 01 • us
+        <div class="small-top">
+            a little something from your chidchidi girlfriend ♡
         </div>
 
         <h1>
-            For My<br>
-            <span>Favourite</span><br>
-            Person.
+            To My<br>
+            Everything 🌎
         </h1>
 
+        <div class="home-script">
+            Happy Boyfriend's Day Cuttie 💗🫶🏻
+        </div>
+
         <p class="home-sub">
-            A tiny corner of the internet dedicated to
-            one very annoying, very handsome,
-            slightly bakwaas human. ♡
+            warning: contains one extremely irritating girlfriend,
+            one professional ignorer and an unreasonable amount of love. 😭
         </p>
 
-        <a href="#him" class="start-btn">
-            ENTER HIS LITTLE WORLD →
-        </a>
+        <button class="start-btn" onclick="goToPage(2)">
+            ENTER MY LITTLE WORLD → ♡
+        </button>
 
+    </div>
+
+    <div class="mini-car">🚘</div>
+
+    <div class="road">
+        <div class="road-line"></div>
     </div>
 
 </section>
 
 
-<!-- HIM -->
+<!-- ======================================================
+     PAGE 2
+====================================================== -->
 
-<section class="about" id="him">
+<section class="page cars-page" id="page2">
 
-    <div class="section-heading">
-        <p>01 — the boy himself</p>
-        <h2>Meet Him ♡</h2>
+    <div class="cat one">🐈</div>
+
+    <div class="section-label">
+        boyfriend's day • chapter two
     </div>
 
-    <div class="about-grid">
+    <h2>
+        Excuse Me Sirr.....
+    </h2>
 
-        <div class="photo-card">
-
-            <!-- CHANGE THIS PHOTO NAME -->
-            <img src="him.jpg" alt="His photo">
-
-            <div class="photo-caption">
-                no special occasion. just you. ♡
-            </div>
-
-        </div>
-
-        <div class="about-text">
-
-            <h3>Somehow...</h3>
-
-            <p>
-                Somewhere between the random conversations,
-                stupid jokes and unnecessary teasing,
-                you became one of my favourite people.
-            </p>
-
-            <br>
-
-            <p>
-                And honestly?
-                I still don't know how you managed that.
-                But okay... you win. 😭
-            </p>
-
-        </div>
-
+    <div class="instruction">
+        Please Select Any One 👇🏻😆
     </div>
-
-</section>
-
-
-<!-- DESI CHHORA -->
-
-<section class="desi" id="desi">
-
-    <div class="section-heading">
-        <p>02 — important information</p>
-        <h2>The Desi Chhora™</h2>
-    </div>
-
-    <div class="desi-box">
-
-        <div class="desi-big">
-            "banda toh aap bahut bakwaas hain..."
-        </div>
-
-        <div class="traits">
-
-            <div class="trait">
-                Professional Ignorer
-                <span>level: expert 😭</span>
-            </div>
-
-            <div class="trait">
-                Certified Bakwaasbaaz
-                <span>100% verified</span>
-            </div>
-
-            <div class="trait">
-                Nakhre
-                <span>unlimited ♡</span>
-            </div>
-
-            <div class="trait">
-                Handsome
-                <span>unfortunately yes.</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CARS -->
-
-<section class="cars" id="cars">
-
-    <div class="section-heading">
-
-        <p>03 — obviously we need this</p>
-
-        <h2>Cars & Chhora Things 🚘</h2>
-
-    </div>
-
 
     <div class="car-grid">
 
-        <div class="car-card">
+        <!-- FORTUNER -->
 
-            <!-- Replace with your own car photo -->
-            <img src="car1.jpg" alt="Favourite car">
+        <div class="car-card" onclick="goToPage(3)">
+
+            <img src="fortuner.jpg"
+                 class="car-photo"
+                 alt="Fortuner">
 
             <div class="car-info">
-                <h3>Dream Car</h3>
-                <p>the one he'd probably choose over everything 😭</p>
+
+                <div class="car-number">
+                    OPTION 01
+                </div>
+
+                <div class="car-name">
+                    Fortuner 🚘
+                </div>
+
+                <div class="select-text">
+                    click if you're the boss
+                </div>
+
+            </div>
+
+            <div class="car-decoration">
+                🖤
             </div>
 
         </div>
 
 
-        <div class="car-card">
+        <!-- THAR -->
 
-            <img src="car2.jpg" alt="Car">
+        <div class="car-card" onclick="goToPage(4)">
+
+            <img src="thar.jpg"
+                 class="car-photo"
+                 alt="Thar">
 
             <div class="car-info">
-                <h3>Desi Boy Energy</h3>
-                <p>because apparently cars are a personality trait.</p>
+
+                <div class="car-number">
+                    OPTION 02
+                </div>
+
+                <div class="car-name">
+                    Thar 🛞
+                </div>
+
+                <div class="select-text">
+                    thoda attitude toh banta hai
+                </div>
+
+            </div>
+
+            <div class="car-decoration">
+                😎
             </div>
 
         </div>
 
 
-        <div class="car-card">
+        <!-- SCORPIO -->
 
-            <img src="car3.jpg" alt="Car">
+        <div class="car-card" onclick="goToPage(5)">
+
+            <img src="scorpio.jpg"
+                 class="car-photo"
+                 alt="Scorpio">
 
             <div class="car-info">
-                <h3>One Day...</h3>
-                <p>manifesting the keys. 🔑</p>
+
+                <div class="car-number">
+                    OPTION 03
+                </div>
+
+                <div class="car-name">
+                    Scorpio 🖤
+                </div>
+
+                <div class="select-text">
+                    enter at your own risk 😭
+                </div>
+
+            </div>
+
+            <div class="car-decoration">
+                ☠️
             </div>
 
         </div>
@@ -693,80 +900,281 @@ footer p {
 </section>
 
 
-<!-- LITTLE THINGS -->
+<!-- ======================================================
+     PAGE 3 - FORTUNER
+====================================================== -->
 
-<section class="little" id="little">
+<section class="page message-page" id="page3">
 
-    <div class="section-heading">
+    <div class="cat one">🐈‍⬛</div>
 
-        <p>04 — little things</p>
+    <div class="message-wrapper">
 
-        <h2>Things I Like ♡</h2>
-
-    </div>
-
-
-    <div class="notes">
-
-        <div class="note">
-            your smile.
+        <div class="message-label">
+            OPTION 01 • FORTUNER EDITION 🚘
         </div>
 
-        <div class="note">
-            your eyes. ✨
+        <div class="message-title">
+            Happy Boyfriend's Day ♡
         </div>
 
-        <div class="note">
-            your hair.
-        </div>
+        <div class="message-text">
 
-        <div class="note">
-            your random nonsense. 😭
-        </div>
+            <p>
+                <strong>Happy Boyfriend’s Day, my dear Avee! 😭💗</strong>
+            </p>
 
-        <div class="note">
-            the way you make normal conversations fun.
-        </div>
-
-        <div class="note">
-            and of course...
             <br>
-            YOU. ♡
+
+            <p>
+                Tu na bohot ajeeb hai yaar 😭😂 Kabhi mujhe itna
+                pareshan karta hai ki sach mein gussa aa jaata hai,
+                aur kabhi itne pyaar se baat karta hai ki phir gussa
+                kab chala jaata hai pata hi nahi chalta 😭😂
+                Aap mujhe ignore bhi bohot karte ho aur busy bhi
+                bohot rehte ho, pata nahi itna busy rehke karte kya
+                ho aap 😭😂 But chalo, aapko maaf kiya kyunki aap
+                cute ho thode se. 🤭 Zyada khush mat hona,
+                bas thode se. 😂
+            </p>
+
+            <br>
+
+            <p>
+                Mujhe aapke saath faltu ki baatein karna, bina kisi
+                baat ke ladna, ek dusre ko pareshan karna aur phir
+                thodi der baad normal ho jaana bohot funny lagta hai.
+                😭😂 Bas aap aise hi rehna, mujhe pareshan karte rehna,
+                meri bakwaas sunte rehna aur haan… kabhi kabhi
+                time pe reply bhi kar diya karo. 😭💗
+            </p>
+
+            <br>
+
+            <p>
+                Happy Boyfriend’s Day once again, Avee! 🫶🏻
+                I love youuu! ❤️
+            </p>
+
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- LETTER -->
-
-<section class="letter" id="letter">
-
-    <div class="letter-box">
-
-        <div class="tiny">
-            a little note
-        </div>
-
-        <h2>Dear You,</h2>
-
-        <p>
-            Nothing dramatic.
-            Nothing too fancy.
-            Just a tiny website I made because
-            I wanted to make something that was
-            completely and unnecessarily YOU.
-        </p>
-
-        <p>
-            We may still be at the beginning of
-            our little story, but I'm really happy
-            that this chapter started.
-        </p>
 
         <div class="signature">
-            — from your favourite person ♡
+            — your chidchidi girlfriend 🎀
+        </div>
+
+    </div>
+
+    <button class="back-arrow" onclick="goToPage(2)">
+        ←
+    </button>
+
+    <button class="next-arrow" onclick="goToPage(2)">
+        🚘
+    </button>
+
+</section>
+
+
+<!-- ======================================================
+     PAGE 4 - THAR
+====================================================== -->
+
+<section class="page message-page thar-page" id="page4">
+
+    <div class="cat two">🐈</div>
+
+    <div class="message-wrapper thar-box">
+
+        <div class="message-label">
+            OPTION 02 • THAR EDITION 🛞
+        </div>
+
+        <div class="polaroid">
+
+            <img src="thar.jpg" alt="Thar">
+
+            <p>
+                Mr. Thar Wale 😭
+            </p>
+
+        </div>
+
+        <div class="thar-title">
+            A little message for you ♡
+        </div>
+
+        <div class="message-text">
+
+            <p>
+                Okay sir, Fortuner ke baad ab Thar bhi choose kar li? 😭
+                Aapki gaadiyon ki list dekh ke lagta hai ki banda
+                simple rehne ke liye bana hi nahi hai. 😂
+            </p>
+
+            <br>
+
+            <p>
+                Waise honestly, mujhe aapki ye chhoti-chhoti cheezein
+                bohot funny lagti hain. Aapka cars ke liye itna excited
+                hona, apni pasand ko lekar itna sure hona, aur phir
+                mujhe uske baare mein unnecessarily explain karna. 😭😂
+            </p>
+
+            <br>
+
+            <p>
+                Aap kabhi kabhi bohot irritating ho sakte ho,
+                professional ignorer bhi ho, aur reply karne mein
+                toh aapko Olympic medal milna chahiye. 😭☝🏻
+                But somehow, in sab ke beech bhi aap mere favourite
+                person ban hi gaye.
+            </p>
+
+            <br>
+
+            <p>
+                So yes, keep being the same annoying,
+                funny, slightly pagal and very very special you. 🫶🏻
+                Bas ek request hai — mujhe ignore thoda kam kiya karo. 😭
+            </p>
+
+        </div>
+
+        <div class="signature">
+            okay bye sir ji 🫡💗
+        </div>
+
+    </div>
+
+    <button class="back-arrow" onclick="goToPage(2)">
+        ←
+    </button>
+
+    <button class="next-arrow" onclick="goToPage(2)">
+        🚘
+    </button>
+
+</section>
+
+
+<!-- ======================================================
+     PAGE 5 - SCORPIO + VOICE NOTE
+====================================================== -->
+
+<section class="page voice-page" id="page5">
+
+    <div class="voice-box">
+
+        <div class="voice-icon">
+            🎙️
+        </div>
+
+        <h2>
+            One Last Thing...
+        </h2>
+
+        <div class="voice-sub">
+            before you go ♡
+        </div>
+
+        <p style="font-size:13px;line-height:1.8;margin-bottom:25px;">
+            Since typing everything felt too boring,
+            I left something here for you instead. 🫶🏻
+        </p>
+
+        <audio controls>
+            <source src="voice-note.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+        <div class="voice-note-text">
+            PRESS PLAY, SIR. 🎧
+        </div>
+
+    </div>
+
+    <button class="back-arrow"
+            onclick="goToPage(2)"
+            style="color:white;border-color:white;background:rgba(0,0,0,.4);">
+        ←
+    </button>
+
+    <button class="next-arrow"
+            onclick="goToPage(6)"
+            style="color:white;border-color:white;background:rgba(0,0,0,.4);">
+        →
+    </button>
+
+</section>
+
+
+<!-- ======================================================
+     PAGE 6 - THANK YOU
+====================================================== -->
+
+<section class="page thank-page" id="page6">
+
+    <div class="thank-wrapper">
+
+        <div class="section-label">
+            the last page ♡
+        </div>
+
+        <div class="thank-title">
+            THANK YOU
+        </div>
+
+        <div class="thank-line"></div>
+
+        <div class="thank-text">
+
+            <p>
+                And lastly, thank you for coming into my life. 🥹❤️
+                I really don’t know how to explain it, but aapke saath
+                baat karna, hasna, ladna, ek dusre ko pareshan karna…
+                mujhe ye sab bohot achha lagta hai.
+            </p>
+
+            <br>
+
+            <p>
+                And you are always the one jisko main har cheez
+                sabse pehle batati hoon, chahe woh kitni bhi chhoti
+                si baat kyun na ho. 🥹🫶🏻
+                I really want to spend each and every phase of my
+                life with you.
+            </p>
+
+            <br>
+
+            <p>
+                I love you bohot saara, bohot saara, bohot saara. ❤️
+                Pata nahi aage kya hoga, but abhi jo bhi hai na,
+                I just want to enjoy every little moment with you.
+            </p>
+
+            <br>
+
+            <p>
+                And even if I don’t say it all the time, I really,
+                really love you. 🥹❤️
+                Bas aise hi mere saath rehna, mujhe kabhi akela
+                mat feel hone dena, aur ek promise karte hain ki
+                hum hamesha ek dusre ke saath honest rahenge aur
+                kabhi ek dusre ko dhokha nahi denge. 🫶🏻💗
+            </p>
+
+        </div>
+
+        <div class="final-sign">
+
+            made with bohot saara pyaar,<br>
+            by your chidchidi girlfriend — Aaradhya ♡
+
+        </div>
+
+        <div class="final-heart">
+            ❤️
         </div>
 
     </div>
@@ -774,14 +1182,112 @@ footer p {
 </section>
 
 
-<footer>
+<script>
 
-    <p>
-        made randomly, but aap special hain. ♡
-    </p>
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
 
-</footer>
+function goToPage(number){
 
+    const pages = document.querySelectorAll('.page');
+
+    pages.forEach(page=>{
+        page.classList.remove('active');
+    });
+
+    const selectedPage = document.getElementById('page' + number);
+
+    if(selectedPage){
+        selectedPage.classList.add('active');
+        window.scrollTo({
+            top:0,
+            behavior:'smooth'
+        });
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+const heartSymbols = [
+    "♡",
+    "♥",
+    "💗",
+    "🫶🏻",
+    "✦"
+];
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        heartSymbols[
+            Math.floor(Math.random()*heartSymbols.length)
+        ];
+
+    heart.style.left =
+        Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random()*20) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random()*6) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },11000);
+
+}
+
+setInterval(createHeart,900);
+
+
+/* =========================================================
+   LITTLE CURSOR SPARKLE EFFECT
+========================================================= */
+
+document.addEventListener("mousemove",function(e){
+
+    if(Math.random() > .85){
+
+        const sparkle = document.createElement("div");
+
+        sparkle.innerHTML="✦";
+
+        sparkle.style.position="fixed";
+        sparkle.style.left=e.clientX+"px";
+        sparkle.style.top=e.clientY+"px";
+        sparkle.style.pointerEvents="none";
+        sparkle.style.fontSize="10px";
+        sparkle.style.zIndex="9999";
+        sparkle.style.transition="1s";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(()=>{
+            sparkle.style.transform="translateY(-20px)";
+            sparkle.style.opacity="0";
+        },20);
+
+        setTimeout(()=>{
+            sparkle.remove();
+        },1000);
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>

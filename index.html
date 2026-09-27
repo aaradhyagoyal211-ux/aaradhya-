@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Favourite Chhora ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f0ea;
+    color: #24211f;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+nav {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    width: min(92%, 850px);
+    padding: 13px 22px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+nav a {
+    text-decoration: none;
+    color: #403a36;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9b5d61;
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+section {
+    min-height: 100vh;
+    padding: 120px 8% 80px;
+    position: relative;
+}
+
+/* ---------------- HOME ---------------- */
+
+.home {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 15% 20%, #e7d6ca 0%, transparent 25%),
+        radial-gradient(circle at 85% 75%, #d9d7ce 0%, transparent 30%),
+        #f4f0ea;
+}
+
+.home-content {
+    max-width: 850px;
+}
+
+.small-title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 11px;
+    color: #8d7772;
+    margin-bottom: 20px;
+}
+
+.home h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(55px, 10vw, 120px);
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.home h1 span {
+    font-style: italic;
+    color: #8d5b60;
+}
+
+.home-sub {
+    margin: 30px auto;
+    max-width: 480px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #6e6661;
+}
+
+.start-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    background: #292522;
+    color: white;
+
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: translateY(-4px);
+    background: #8d5b60;
+}
+
+/* floating hearts */
+
+.float {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.5;
+    animation: float 5s ease-in-out infinite;
+}
+
+.f1 { top: 25%; left: 10%; }
+.f2 { top: 35%; right: 10%; animation-delay: 1s; }
+.f3 { bottom: 20%; left: 20%; animation-delay: 2s; }
+.f4 { bottom: 25%; right: 20%; animation-delay: 3s; }
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+/* ---------------- ABOUT HIM ---------------- */
+
+.about {
+    background: #e7ded6;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading p {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8d7772;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(45px, 7vw, 80px);
+    font-weight: 400;
+}
+
+.about-grid {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.photo-card {
+    background: #f8f4ee;
+    padding: 15px 15px 35px;
+    transform: rotate(-2deg);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    text-align: center;
+    margin-top: 16px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.about-text {
+    padding: 20px;
+}
+
+.about-text h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    line-height: 1.9;
+    color: #665f5a;
+    font-size: 14px;
+}
+
+/* ---------------- DESI CHHORA ---------------- */
+
+.desi {
+    background: #272421;
+    color: #f5eee6;
+}
+
+.desi .section-heading p {
+    color: #c5a7a0;
+}
+
+.desi .section-heading h2 {
+    color: #f5eee6;
+}
+
+.desi-box {
+    max-width: 850px;
+    margin: auto;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03)
+        );
+}
+
+.desi-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(35px, 6vw, 65px);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.traits {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+.trait {
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 22px;
+    font-size: 13px;
+}
+
+.trait span {
+    display: block;
+    color: #cda9a0;
+    margin-top: 7px;
+}
+
+/* ---------------- CARS ---------------- */
+
+.cars {
+    background: #d8ddd9;
+}
+
+.car-grid {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.car-card {
+    background: #f5f4ef;
+    padding: 14px;
+
+    transition: 0.4s;
+}
+
+.car-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+}
+
+.car-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 18px 8px;
+}
+
+.car-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.car-info p {
+    font-size: 11px;
+    color: #77716c;
+    margin-top: 6px;
+}
+
+/* ---------------- LITTLE THINGS ---------------- */
+
+.little {
+    background: #f4e8e4;
+}
+
+.notes {
+    max-width: 850px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.note {
+    background: #fffaf7;
+    padding: 35px;
+
+    min-height: 170px;
+
+    display: flex;
+    align-items: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    line-height: 1.5;
+
+    transition: 0.3s;
+}
+
+.note:hover {
+    transform: rotate(1deg) scale(1.02);
+}
+
+.note:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.note:nth-child(even):hover {
+    transform: rotate(0) scale(1.02);
+}
+
+/* ---------------- LETTER ---------------- */
+
+.letter {
+    background: #eee9df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter-box {
+    max-width: 750px;
+
+    background: #fffdf8;
+
+    padding: 60px 55px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+
+    text-align: center;
+}
+
+.letter-box .tiny {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    color: #9a7770;
+}
+
+.letter-box h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 55px;
+    font-weight: 400;
+    margin: 20px 0 30px;
+}
+
+.letter-box p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #5d5752;
+}
+
+.signature {
+    margin-top: 30px;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 25px;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    background: #272421;
+    color: #eee4da;
+    padding: 35px;
+    text-align: center;
+}
+
+footer p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width: 700px) {
+
+    nav {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    nav a {
+        font-size: 8px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 400px;
+    }
+
+    .traits {
+        grid-template-columns: 1fr;
+    }
+
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notes {
+        grid-template-columns: 1fr;
+    }
+
+    .letter-box {
+        padding: 40px 25px;
+    }
+
+    .letter-box h2 {
+        font-size: 42px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <a href="#home">home</a>
+    <a href="#him">him</a>
+    <a href="#desi">chhora</a>
+    <a href="#cars">cars</a>
+    <a href="#little">little things</a>
+    <a href="#letter">♡</a>
+</nav>
+
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+    <div class="float f1">♡</div>
+    <div class="float f2">✦</div>
+    <div class="float f3">♡</div>
+    <div class="float f4">✧</div>
+
+    <div class="home-content">
+
+        <div class="small-title">
+            chapter 01 • us
+        </div>
+
+        <h1>
+            For My<br>
+            <span>Favourite</span><br>
+            Person.
+        </h1>
+
+        <p class="home-sub">
+            A tiny corner of the internet dedicated to
+            one very annoying, very handsome,
+            slightly bakwaas human. ♡
+        </p>
+
+        <a href="#him" class="start-btn">
+            ENTER HIS LITTLE WORLD →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- HIM -->
+
+<section class="about" id="him">
+
+    <div class="section-heading">
+        <p>01 — the boy himself</p>
+        <h2>Meet Him ♡</h2>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="photo-card">
+
+            <!-- CHANGE THIS PHOTO NAME -->
+            <img src="him.jpg" alt="His photo">
+
+            <div class="photo-caption">
+                no special occasion. just you. ♡
+            </div>
+
+        </div>
+
+        <div class="about-text">
+
+            <h3>Somehow...</h3>
+
+            <p>
+                Somewhere between the random conversations,
+                stupid jokes and unnecessary teasing,
+                you became one of my favourite people.
+            </p>
+
+            <br>
+
+            <p>
+                And honestly?
+                I still don't know how you managed that.
+                But okay... you win. 😭
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DESI CHHORA -->
+
+<section class="desi" id="desi">
+
+    <div class="section-heading">
+        <p>02 — important information</p>
+        <h2>The Desi Chhora™</h2>
+    </div>
+
+    <div class="desi-box">
+
+        <div class="desi-big">
+            "banda toh aap bahut bakwaas hain..."
+        </div>
+
+        <div class="traits">
+
+            <div class="trait">
+                Professional Ignorer
+                <span>level: expert 😭</span>
+            </div>
+
+            <div class="trait">
+                Certified Bakwaasbaaz
+                <span>100% verified</span>
+            </div>
+
+            <div class="trait">
+                Nakhre
+                <span>unlimited ♡</span>
+            </div>
+
+            <div class="trait">
+                Handsome
+                <span>unfortunately yes.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CARS -->
+
+<section class="cars" id="cars">
+
+    <div class="section-heading">
+
+        <p>03 — obviously we need this</p>
+
+        <h2>Cars & Chhora Things 🚘</h2>
+
+    </div>
+
+
+    <div class="car-grid">
+
+        <div class="car-card">
+
+            <!-- Replace with your own car photo -->
+            <img src="car1.jpg" alt="Favourite car">
+
+            <div class="car-info">
+                <h3>Dream Car</h3>
+                <p>the one he'd probably choose over everything 😭</p>
+            </div>
+
+        </div>
+
+
+        <div class="car-card">
+
+            <img src="car2.jpg" alt="Car">
+
+            <div class="car-info">
+                <h3>Desi Boy Energy</h3>
+                <p>because apparently cars are a personality trait.</p>
+            </div>
+
+        </div>
+
+
+        <div class="car-card">
+
+            <img src="car3.jpg" alt="Car">
+
+            <div class="car-info">
+                <h3>One Day...</h3>
+                <p>manifesting the keys. 🔑</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LITTLE THINGS -->
+
+<section class="little" id="little">
+
+    <div class="section-heading">
+
+        <p>04 — little things</p>
+
+        <h2>Things I Like ♡</h2>
+
+    </div>
+
+
+    <div class="notes">
+
+        <div class="note">
+            your smile.
+        </div>
+
+        <div class="note">
+            your eyes. ✨
+        </div>
+
+        <div class="note">
+            your hair.
+        </div>
+
+        <div class="note">
+            your random nonsense. 😭
+        </div>
+
+        <div class="note">
+            the way you make normal conversations fun.
+        </div>
+
+        <div class="note">
+            and of course...
+            <br>
+            YOU. ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section class="letter" id="letter">
+
+    <div class="letter-box">
+
+        <div class="tiny">
+            a little note
+        </div>
+
+        <h2>Dear You,</h2>
+
+        <p>
+            Nothing dramatic.
+            Nothing too fancy.
+            Just a tiny website I made because
+            I wanted to make something that was
+            completely and unnecessarily YOU.
+        </p>
+
+        <p>
+            We may still be at the beginning of
+            our little story, but I'm really happy
+            that this chapter started.
+        </p>
+
+        <div class="signature">
+            — from your favourite person ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        made randomly, but aap special hain. ♡
+    </p>
+
+</footer>
+
+
+</body>
+</html>

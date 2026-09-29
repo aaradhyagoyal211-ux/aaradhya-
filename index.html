@@ -296,11 +296,11 @@ body{
 
 .car-card{
     position:relative;
-    min-height:430px;
-    border:2px solid #111;
-    background:#fff;
+    min-height:270px;
+    border:none;
+    background:transparent;
     cursor:pointer;
-    overflow:hidden;
+    overflow:visible;
     transition:.45s;
 }
 
@@ -312,11 +312,10 @@ body{
 .car-photo{
     width:100%;
     height:270px;
-    object-fit:cover;
+    object-fit:contain;
     filter:grayscale(10%);
     transition:.5s;
 }
-
 .car-card:hover .car-photo{
     transform:scale(1.07);
 }
@@ -802,11 +801,8 @@ audio{
     </div>
 
     <div class="car-grid">
+       <!-- FORTUNER -->
 
-        <!-- FORTUNER -->
-
-        <div class="car-card" onclick="goToPage(3)">
-           
 <div class="car-card" onclick="goToPage(3)">
     <img src="fortuner-sticker.png"
          class="car-photo"
@@ -814,28 +810,24 @@ audio{
 </div>
 
 
-        <!-- THAR -->
+<!-- THAR -->
 
-        <div class="car-card" onclick="goToPage(4)">
-
-            <div class="car-card" onclick="goToPage(4)">
-
+<div class="car-card" onclick="goToPage(4)">
     <img src="thar-sticker.png"
          class="car-photo"
          alt="Thar">
-
 </div>
-        <!-- SCORPIO -->
 
-        <div class="car-card" onclick="goToPage(5)">
-           <div class="car-card" onclick="goToPage(5)">
+
+<!-- SCORPIO -->
+
+<div class="car-card" onclick="goToPage(5)">
     <img src="scorpio-sticker.png"
          class="car-photo"
          alt="Scorpio">
 </div>
 
-            
-
+        
     </div>
 
 </section>
